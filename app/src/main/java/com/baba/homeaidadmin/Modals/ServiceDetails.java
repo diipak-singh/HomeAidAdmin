@@ -1,7 +1,7 @@
 package com.baba.homeaidadmin.Modals;
 
 public class ServiceDetails {
-    String userImg, userName, userPhone, userCity, userAddress, itemImg, itemName, itemCatg, itemPrice, serviceDay, serviceTime, currentDay, currentTime, otherDetail, serviceId, userId, paymentStatus, isCompleted,rating;
+    private String userImg, userName, userPhone, userCity, userAddress, itemImg, itemName, itemCatg, itemPrice, serviceDay, serviceTime, currentDay, currentTime, otherDetail, serviceId, userId, paymentStatus, isCompleted,rating;
 
     public ServiceDetails() {
     }

@@ -1,9 +1,9 @@
 package com.baba.homeaidadmin.Modals;
 
 public class CategoryModal {
-    String catName;
-    String catImg;
-    String catId;
+    private String catName;
+    private String catImg;
+    private String catId;
 
     public CategoryModal(String catName, String catImg, String catId) {
         this.catName = catName;

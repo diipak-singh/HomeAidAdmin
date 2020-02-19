@@ -20,9 +20,9 @@ import com.baba.homeaidadmin.R;
 import java.util.ArrayList;
 
 public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.serviceViewHolder> {
-    ArrayList<ServiceDetails> serviceList = new ArrayList<>();
-    MainActivity mainActivity;
-    Context ctx;
+    private ArrayList<ServiceDetails> serviceList;
+    private MainActivity mainActivity;
+    private Context ctx;
     public static SparseBooleanArray itemStateArray = new SparseBooleanArray();
 
     public ServiceAdapter(ArrayList<ServiceDetails> serviceList, Context ctx) {

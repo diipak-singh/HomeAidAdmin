@@ -52,15 +52,12 @@ import java.util.List;
 public class CategoryActivity extends AppCompatActivity {
 
     DatabaseReference dref;
-    private FloatingActionButton fab;
     private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager layoutManager;
     private RecyclerView.Adapter adapter;
     private List<CategoryModal> catList = new ArrayList<>();
 
     private Dialog addCategoryDialog;
     private EditText catName;
-    private Button addCat;
 
     private ImageView categoryImage;
 
@@ -73,25 +70,24 @@ public class CategoryActivity extends AppCompatActivity {
     String ImageUrl = null;
 
     Toolbar toolbar;
-    private TextView toolbarText;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
-        fab = findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
 
         toolbar = findViewById(R.id.include);
         setSupportActionBar(toolbar);
-        toolbarText=findViewById(R.id.counter_text);
+        TextView toolbarText = findViewById(R.id.counter_text);
         toolbarText.setText("All Services");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mStorageRef = FirebaseStorage.getInstance().getReference("cat_images");
 
         recyclerView = findViewById(R.id.recyclerView);
-        layoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         ((LinearLayoutManager) layoutManager).setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
@@ -101,7 +97,7 @@ public class CategoryActivity extends AppCompatActivity {
         addCategoryDialog.setContentView(R.layout.add_cat_dialog);
         addCategoryDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         catName = addCategoryDialog.findViewById(R.id.editText_catName);
-        addCat = addCategoryDialog.findViewById(R.id.button_addCat);
+        Button addCat = addCategoryDialog.findViewById(R.id.button_addCat);
         categoryImage = addCategoryDialog.findViewById(R.id.imageView_catImage);
 
 

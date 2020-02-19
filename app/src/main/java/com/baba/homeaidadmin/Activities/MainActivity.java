@@ -34,7 +34,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, View.OnLongClickListener {
 
     Toolbar toolbar;
-    private BottomNavigationView bottomNavigationView;
     private TextView counter_text_view;
 
     private RecyclerView recyclerView;
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         counter_text_view = findViewById(R.id.counter_text);
         counter_text_view.setText("All Requests");
 
-        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.bot_home);
 
