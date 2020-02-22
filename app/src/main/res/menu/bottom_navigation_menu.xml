@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <item
+        android:id="@+id/bot_allServices"
+        android:icon="@drawable/ic_services"
+        android:checkable="true"
+        android:title="Services" />
+    <item
+        android:id="@+id/bot_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:checkable="true"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/bot_allWorkers"
+        android:icon="@drawable/ic_workers"
+        android:checkable="true"
+        android:title="Workers" />
+
+
+</menu>
