@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baba.homeaidadmin.Adapters.ServiceAdapter;
+import com.baba.homeaidadmin.Adapters.ServiceCompletedAdapter;
 import com.baba.homeaidadmin.Modals.ServiceDetails;
 import com.baba.homeaidadmin.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -87,7 +88,7 @@ public class CompletedActivity extends AppCompatActivity {
                     }
 
                     Collections.reverse(serviceDetails);
-                    adapter = new ServiceAdapter((ArrayList<ServiceDetails>) serviceDetails, CompletedActivity.this);
+                    adapter = new ServiceCompletedAdapter((ArrayList<ServiceDetails>) serviceDetails, CompletedActivity.this);
                     recyclerView.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
 

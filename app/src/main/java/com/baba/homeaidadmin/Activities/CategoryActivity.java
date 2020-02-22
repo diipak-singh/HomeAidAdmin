@@ -91,6 +91,7 @@ public class CategoryActivity extends AppCompatActivity {
         ((LinearLayoutManager) layoutManager).setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
+
         getCategories();
 
         addCategoryDialog = new Dialog(CategoryActivity.this);
@@ -136,6 +137,7 @@ public class CategoryActivity extends AppCompatActivity {
                     public void onLongItemClick(View view, int position) {
                         String id=catList.get(position).getCatId();
                         String name=catList.get(position).getCatName();
+
                         deleteCategory(id,name);
 
                     }

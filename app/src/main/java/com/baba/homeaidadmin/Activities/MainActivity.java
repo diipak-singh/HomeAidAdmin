@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     Toolbar toolbar;
     private TextView counter_text_view;
-
     private RecyclerView recyclerView;
     public boolean is_in_action_mode = false;
     RecyclerView.LayoutManager layoutManager;
