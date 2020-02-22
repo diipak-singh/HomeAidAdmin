@@ -38,7 +38,7 @@
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="@+id/recyclerView3"
         app:layout_constraintEnd_toEndOf="@+id/recyclerView3"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        app:srcCompat="@drawable/ic_add_white_24dp" />
 
     <TextView
         android:id="@+id/textView7"

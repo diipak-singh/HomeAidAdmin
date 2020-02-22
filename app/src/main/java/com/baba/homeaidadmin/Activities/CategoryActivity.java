@@ -135,10 +135,10 @@ public class CategoryActivity extends AppCompatActivity {
 
                     @Override
                     public void onLongItemClick(View view, int position) {
-                        String id=catList.get(position).getCatId();
-                        String name=catList.get(position).getCatName();
+                        String id = catList.get(position).getCatId();
+                        String name = catList.get(position).getCatName();
 
-                        deleteCategory(id,name);
+                        deleteCategory(id, name);
 
                     }
                 }));
@@ -157,7 +157,7 @@ public class CategoryActivity extends AppCompatActivity {
 
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         CategoryModal cm = ds.getValue(CategoryModal.class);
-                        catList.add(new CategoryModal(cm.getCatName(),cm.getCatImg(),cm.getCatId()));
+                        catList.add(new CategoryModal(cm.getCatName(), cm.getCatImg(), cm.getCatId()));
                     }
                     adapter = new CategoryAdapter((ArrayList<CategoryModal>) catList);
                     recyclerView.setAdapter(adapter);
@@ -245,7 +245,7 @@ public class CategoryActivity extends AppCompatActivity {
         String cat_name = catName.getText().toString().trim();
         String id = dref.push().getKey();
 
-        CategoryModal cm = new CategoryModal(cat_name,ImageUrl,id);
+        CategoryModal cm = new CategoryModal(cat_name, ImageUrl, id);
         dref.child(id).setValue(cm).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -271,7 +271,7 @@ public class CategoryActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 finishAffinity();
@@ -282,12 +282,12 @@ public class CategoryActivity extends AppCompatActivity {
         }
     }
 
-    public void deleteCategory(final String catId, String catName){
+    public void deleteCategory(final String catId, String catName) {
         dref = FirebaseDatabase.getInstance().getReference().child("categories");
 
         new AlertDialog.Builder(this)
                 .setIcon(R.drawable.ic_delete_forever)
-                .setTitle("Deleting "+catName)
+                .setTitle("Deleting " + catName)
                 .setMessage("Are you sure, you want to delete this category?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
